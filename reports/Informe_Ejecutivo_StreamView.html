@@ -1,0 +1,228 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8">
+<title>Informe Ejecutivo · StreamView Analytics</title>
+<style>
+ @page { size: A4; margin: 16mm 15mm 16mm 15mm; }
+ body { font-family: "Segoe UI", system-ui, sans-serif; color: #0b0b0b; font-size: 10.3pt; line-height: 1.5; }
+ h1 { font-size: 25pt; margin: 0 0 4pt; letter-spacing: -0.02em; }
+ h2 { font-size: 15pt; margin: 20pt 0 6pt; padding-bottom: 3pt; border-bottom: 2px solid #6250d6; break-after: avoid; }
+ h3 { font-size: 11.5pt; margin: 12pt 0 4pt; color: #0b0b0b; break-after: avoid; }
+ p { margin: 4pt 0 6pt; text-align: justify; }
+ .muted { color: #52514e; }
+ .cover { height: 255mm; display: flex; flex-direction: column; justify-content: center; break-after: page; }
+ .cover .tag { color: #6250d6; font-weight: 600; letter-spacing: .08em; font-size: 10pt; }
+ .cover .sub { font-size: 14pt; color: #52514e; margin-bottom: 30pt; }
+ .big { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8pt; margin: 10pt 0; }
+ .kpi { border: 1px solid #e1e0d9; border-radius: 8px; padding: 8pt 10pt; background: #fcfcfb; }
+ .kpi .v { font-size: 18pt; font-weight: 600; } .kpi .l { font-size: 8.5pt; color: #52514e; }
+ .box { background: #f3f2fb; border-left: 4px solid #6250d6; padding: 8pt 12pt; border-radius: 4px; margin: 8pt 0; }
+ figure { margin: 8pt 0 10pt; break-inside: avoid; } figure img { width: 100%; border: 1px solid #ecebe6; border-radius: 4px; }
+ figcaption { font-size: 8.5pt; color: #52514e; margin-top: 2pt; }
+ table { border-collapse: collapse; width: 100%; font-size: 8.6pt; margin: 6pt 0 10pt; break-inside: auto; }
+ th { background: #efeee9; text-align: left; padding: 4pt 5pt; border-bottom: 1px solid #c3c2b7; }
+ td { padding: 4pt 5pt; border-bottom: 1px solid #e1e0d9; vertical-align: top; }
+ tr { break-inside: avoid; }
+ .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; }
+ .pb { break-before: page; }
+ .model { display: flex; align-items: center; gap: 6pt; margin: 8pt 0; break-inside: avoid; }
+ .model .col { display: flex; flex-direction: column; gap: 5pt; flex: 1; }
+ .model .ent { border: 1px solid #c3c2b7; border-radius: 6px; padding: 5pt 7pt; font-size: 8.4pt; background: #fcfcfb; }
+ .model .ent.src { background: #f1f0ec; } .model .ent.main { background: #f3f2fb; border-color: #6250d6; }
+ .model .arrow { text-align: center; font-size: 8pt; color: #52514e; width: 62pt; }
+ code { font-size: 8.8pt; background: #f1f0ec; padding: 0 3pt; border-radius: 3px; }
+ ol li, ul li { margin-bottom: 3pt; }
+</style></head><body>
+
+<div class="cover">
+ <div class="tag">ADY1104 · VISUALIZACIÓN DE DATOS · INFORME EJECUTIVO</div>
+ <h1>Catálogo audiovisual: dónde invertir y qué adquirir</h1>
+ <div class="sub">Solución de Visual Analytics para la Gerencia de Contenidos y Adquisición de StreamView Analytics</div>
+ <div class="big">
+  <div class="kpi"><div class="v">32.000</div><div class="l">títulos analizados (2010–2025)</div></div>
+  <div class="kpi"><div class="v">24</div><div class="l">visualizaciones justificadas</div></div>
+  <div class="kpi"><div class="v">7</div><div class="l">vistas en el dashboard interactivo</div></div>
+  <div class="kpi"><div class="v">6</div><div class="l">recomendaciones basadas en evidencia</div></div>
+ </div>
+</div>
+
+<h2>Resumen ejecutivo</h2>
+<div class="box"><b>Mensaje principal:</b> el catálogo de StreamView está sobre-invertido en Drama y en contenido en inglés,
+mientras que la popularidad y la calidad apuntan a <b>Animación y Familiar</b>, a <b>contenido latinoamericano</b>
+(telenovelas, México, Chile, Colombia) y a <b>producciones asiáticas</b>. Reasignar la adquisición hacia esos segmentos
+alinea el catálogo con la visión de la empresa —ser la plataforma líder en Latinoamérica— y con lo que la audiencia
+valora.</div>
+<div class="big">
+ <div class="kpi"><div class="v">5,1%</div><div class="l">del catálogo está en español, con popularidad relativa 58 (típico = 50)</div></div>
+ <div class="kpi"><div class="v">+6,0 pp</div><div class="l">brecha demanda–oferta de Acción y aventura (películas)</div></div>
+ <div class="kpi"><div class="v">-5,1 pp</div><div class="l">brecha de Drama (películas): sobre-ofertado</div></div>
+ <div class="kpi"><div class="v">37%</div><div class="l">de las películas no recupera su presupuesto</div></div>
+</div>
+
+<h2>1. Descripción del problema de negocio</h2>
+<p>StreamView Analytics es una plataforma de streaming por suscripción con presencia en Latinoamérica, fundada en 2018,
+que incorpora semanalmente nuevas producciones de distintos países e idiomas. El crecimiento del catálogo generó un
+problema de gestión de la información: cada área usa reportes construidos con criterios diferentes, existen múltiples
+versiones de un mismo indicador y <b>las decisiones de adquisición se toman con información parcial</b>
+(problemas 1, 3 y 6 del caso). La Gerencia de Contenidos y Adquisición no puede identificar con rapidez qué géneros,
+países y contenidos tienen mayor potencial, y los dashboards existentes presentan exceso de información y poca interacción (problema 7).</p>
+<p><b>Pregunta de negocio que guía el proyecto:</b> <i>¿Qué tipo de contenido, de qué géneros y de qué mercados debería
+adquirir y priorizar StreamView para tener un catálogo más popular y mejor evaluado?</i></p>
+
+<h2>2. Objetivos del proyecto</h2>
+<p><b>Objetivo general.</b> Diseñar e implementar una solución de Visual Analytics que comunique la composición, popularidad,
+valoración y rentabilidad del catálogo para apoyar las decisiones de adquisición de la Gerencia de Contenidos.</p>
+<ol>
+ <li>Caracterizar el catálogo por tipo, género, país e idioma (KPIs del catálogo).</li>
+ <li>Detectar brechas entre la oferta del catálogo y la demanda (popularidad) por género y mercado.</li>
+ <li>Comparar popularidad y calificación para identificar contenido valioso que no es evidente con una sola métrica.</li>
+ <li>Analizar la relación presupuesto–ingresos de las películas para orientar el riesgo de inversión.</li>
+ <li>Entregar un dashboard interactivo y una narrativa visual con recomendaciones sustentadas en evidencia.</li>
+</ol>
+
+<h2>3. Audiencia objetivo y propósito comunicacional</h2>
+<p><b>Audiencia principal: Gerente de Contenidos y Adquisición.</b> Responsable de evaluar oportunidades de incorporación de
+títulos, negociar licencias con estudios y definir la composición futura del catálogo. Perfil: experto en el negocio
+audiovisual, no en estadística; necesita respuestas rápidas, comparables y accionables.</p>
+<table><thead><tr><th>Necesidad de la audiencia</th><th>Cómo la responde la solución</th></tr></thead><tbody><tr><td>¿Qué géneros adquirir?</td><td>Brecha oferta/demanda + matriz de oportunidad con detalle por género (clic)</td></tr><tr><td>¿Qué mercados tienen potencial?</td><td>Mapa, ranking de popularidad por país con Latinoamérica destacada, calificación por país</td></tr><tr><td>¿Qué riesgo financiero asumo?</td><td>ROI mediano por género y por tramo de presupuesto, éxitos de bajo presupuesto</td></tr><tr><td>¿Qué títulos destacar?</td><td>Rankings de popularidad, calificación ponderada y votos</td></tr></tbody></table>
+<p><b>Propósito comunicacional:</b> <i>persuadir con evidencia</i> para reorientar la política de adquisición. Por eso cada
+gráfico tiene un <b>título-hallazgo</b> (la conclusión, no el tema), un subtítulo con período y alcance (regla 7), un color
+de foco sobre gris de contexto para guiar la mirada, y lenguaje de negocio en español. Audiencias secundarias:
+Directorio (vista Resumen ejecutivo) y Marketing (rankings y mercados).</p>
+
+<h2>4. Fuentes de datos, integración y calidad</h2>
+<p>Se usaron exclusivamente las dos fuentes oficiales del caso: <b>Netflix Movies Detailed up to 2025</b> (16.000 películas,
+18 variables) y <b>Netflix TV Shows Detailed up to 2025</b> (16.000 series, 16 variables), con metadatos de TMDB.
+Ambas se integraron en un catálogo unificado de 32.000 títulos más tres tablas derivadas (géneros, países y personas,
+porque son campos multivalor). Variables relevantes: <code>type</code>, <code>genres</code>, <code>country</code>,
+<code>language</code>, <code>release_year</code>, <code>date_added</code>, <code>popularity</code>, <code>vote_average</code>,
+<code>vote_count</code>, <code>budget</code>, <code>revenue</code>, <code>director</code>, <code>cast</code>.</p>
+<h3>4.1 Modelo de datos y relaciones</h3>
+<div class="model">
+ <div class="col"><div class="ent src"><b>movies_clean.csv</b><br>16.000 películas · 18 variables<br><small>incluye budget, revenue</small></div>
+  <div class="ent src"><b>tvshows_clean.csv</b><br>16.000 series · 16 variables<br><small>sin budget ni revenue</small></div></div>
+ <div class="arrow">unión<br>→<br><small>uid = tipo + show_id</small></div>
+ <div class="col"><div class="ent main"><b>catalogo</b> (32.000)<br>PK <code>uid</code><br><small>tipo, año, idioma, popularidad, percentil, nota, nota ponderada, ROI…</small></div></div>
+ <div class="arrow">1 : N<br>→<br><small>explosión de campos multivalor</small></div>
+ <div class="col"><div class="ent"><b>catalogo_generos</b><br>uid → género armonizado</div>
+  <div class="ent"><b>catalogo_paises</b><br>uid → país, ISO-3</div>
+  <div class="ent"><b>catalogo_personas</b><br>uid → director / actor</div></div>
+</div>
+<p>Las dos fuentes comparten 16 variables y se apilan en una sola tabla (<code>catalogo</code>); como los <code>show_id</code>
+de TMDB se repiten entre películas y series, la clave es <code>uid</code>. Los campos con varios valores por título
+("Drama, Romance"; "Reino Unido, Estados Unidos") se separan en tablas relacionadas 1:N por <code>uid</code>; así un título
+cuenta en cada uno de sus géneros o países, y todos los filtros del dashboard se propagan entre tablas por esa clave.</p>
+<table><thead><tr><th>Variable (→ derivada)</th><th>Disponible en</th><th>Uso en el análisis</th></tr></thead><tbody><tr><td><code>type</code> → tipo</td><td>Ambos</td><td>Separar y comparar películas vs series (regla 2)</td></tr><tr><td><code>genres</code> → género armonizado</td><td>Ambos</td><td>Oferta vs demanda por género, matriz de oportunidad</td></tr><tr><td><code>country</code>, <code>language</code></td><td>Ambos</td><td>Mercados, mapa, idiomas</td></tr><tr><td><code>popularity</code> → percentil dentro del tipo</td><td>Ambos</td><td>Demanda relativa (índice TMDB, no reproducciones)</td></tr><tr><td><code>vote_average</code> + <code>vote_count</code> → nota, nota ponderada</td><td>Ambos</td><td>Calidad percibida (≥ 10 votos)</td></tr><tr><td><code>release_year</code>, <code>date_added</code></td><td>Ambos</td><td>Composición en el tiempo, estacionalidad</td></tr><tr><td><code>budget</code>, <code>revenue</code> → ROI, tramo</td><td>Solo películas</td><td>Riesgo y retorno de inversión (reglas 3, 6 y 9)</td></tr><tr><td><code>director</code>, <code>cast</code></td><td>Ambos (69% sin director en series)</td><td>Talento más frecuente</td></tr></tbody></table>
+<div class="box"><b>Alcance y límites.</b> Las decisiones se fundamentan en datos de <b>catálogo</b>: contenidos, popularidad
+y valoración; los indicadores financieros solo para películas con datos válidos. Las pautas mencionan fuentes corporativas
+de usuarios, suscripciones y reproducciones, pero <b>no están disponibles</b> en este proyecto; por eso la solución
+<b>no analiza retención, engagement ni comportamiento de usuarios</b>, y no promete impacto sobre esas métricas.</div>
+<p><b>Popularidad relativa (0–100).</b> Para comparar películas y series —cuya popularidad TMDB se calcula en escalas distintas— cada título recibe su posición dentro de su tipo: 50 es el título típico y 80 significa que es más popular que el 80% de los títulos de su tipo. Para un género o país se informa la del título típico del grupo.</p>
+<h3>4.2 Calidad de los datos</h3>
+<figure><img src='../images/00_calidad_datos.png'><figcaption>Figura 1. Problemas de calidad por variable y dataset (datos originales).</figcaption></figure>
+<table><thead><tr><th>Problema detectado</th><th>Decisión</th></tr></thead><tbody><tr><td><code>rating</code> = <code>vote_average</code> en el 100% (no es clasificación etaria)</td><td>Excluida → los KPIs de clasificación etaria no son calculables (limitación reportada)</td></tr><tr><td><code>duration</code> vacía (películas) o constante '1 Seasons' (series)</td><td>Excluida</td></tr><tr><td>'Sin información' como texto (69% director en series)</td><td>Convertido a nulo; limitación indicada en los gráficos</td></tr><tr><td>397 <code>show_id</code> repetidos entre películas y series</td><td>Clave única <code>uid</code> = tipo + id</td></tr><tr><td>Calificaciones con pocos votos (mediana de 4 votos en series)</td><td><code>nota</code> solo con ≥ 10 votos (64% de los títulos; 38% de las series) + calificación bayesiana para rankings</td></tr><tr><td>Popularidad muy asimétrica; escalas distintas por tipo</td><td>Mediana, percentil dentro de cada tipo, escala log</td></tr><tr><td>Exactamente 1.000 títulos por año y tipo (muestra estratificada)</td><td>Se analiza composición, no volumen</td></tr><tr><td>Presupuestos de USD 1–7.000 con ingresos millonarios (errores)</td><td>Universo financiero: budget ≥ USD 100 mil y revenue > 0 → 3.500 películas</td></tr><tr><td>Géneros con taxonomías distintas entre tipos</td><td>Taxonomía armonizada en español para comparar (regla 2)</td></tr></tbody></table>
+
+<h2 class="pb">5. Análisis exploratorio mediante visualizaciones</h2>
+<h3>5.1 Composición del catálogo</h3>
+<figure><img src='../images/01_treemap_generos.png'><figcaption>Figura 2. Drama y Comedia dominan ambos tipos; Animación, Familiar y Telenovela ocupan áreas pequeñas.</figcaption></figure>
+<div class="two"><figure><img src='../images/02_idiomas.png'><figcaption>Figura 3. El inglés concentra 44%; el español, con 5,1%, tiene popularidad sobre la mediana.</figcaption></figure>
+<figure><img src='../images/03_mapa_produccion.png'><figcaption>Figura 4. EE.UU. concentra 29% de las producciones (escala log).</figcaption></figure></div>
+<div class="two"><figure><img src='../images/13_mix_generos_peliculas.png'><figcaption>Figura 5. De cada 10 películas, 2 son Drama y menos de 1 es Animación o Familiar.</figcaption></figure>
+<figure><img src='../images/14_mix_generos_series.png'><figcaption>Figura 6. En series, Drama sube de ~3 a ~4 de cada 10 títulos en los últimos años.</figcaption></figure></div>
+<h3>5.2 Popularidad y valoración</h3>
+<div class="two"><figure><img src='../images/09_dist_popularidad.png'><figcaption>Figura 7. Series: popularidad mediana 3,3x la de películas.</figcaption></figure>
+<figure><img src='../images/10_dist_nota.png'><figcaption>Figura 8. Series mejor evaluadas: 7,29 vs 6,35.</figcaption></figure></div>
+<div class="two"><figure><img src='../images/11_pop_vs_nota.png'><figcaption>Figura 9. La nube no forma una diagonal: ser popular no implica estar bien evaluado (correlación 0,23).</figcaption></figure>
+<figure><img src='../images/12_tendencia_nota.png'><figcaption>Figura 10. La calificación media de películas sube desde 2010.</figcaption></figure></div>
+<div class="two"><figure><img src='../images/19_top_populares.png'><figcaption>Figura 11. Más populares: talk shows, telenovelas brasileñas y estrenos recientes.</figcaption></figure>
+<figure><img src='../images/20_top_evaluados.png'><figcaption>Figura 12. Mejor evaluados (bayesiano): todas series, mayoría animación.</figcaption></figure></div>
+<h3>5.3 Oferta vs demanda: géneros y mercados</h3>
+<figure><img src='../images/04_brecha_oferta_demanda.png'><figcaption>Figura 13. Brecha = % del género en el 20% más popular − % en el catálogo.</figcaption></figure>
+<div class="two"><figure><img src='../images/05_matriz_peliculas.png'><figcaption>Figura 14. Matriz de oportunidad · películas.</figcaption></figure>
+<figure><img src='../images/06_matriz_series.png'><figcaption>Figura 15. Matriz de oportunidad · series.</figcaption></figure></div>
+<div class="two"><figure><img src='../images/07_mercados.png'><figcaption>Figura 16. Chile, México y Colombia: popularidad alta con poca oferta.</figcaption></figure>
+<figure><img src='../images/08_paises_nota.png'><figcaption>Figura 17. Japón, Corea y México: contenido mejor evaluado.</figcaption></figure></div>
+<h3>5.4 Rentabilidad (solo películas)</h3>
+<figure><img src='../images/16_presupuesto_ingresos.png'><figcaption>Figura 18. 37% de las películas no recupera la inversión; joyas de bajo presupuesto anotadas.</figcaption></figure>
+<div class="two"><figure><img src='../images/17_roi_genero.png'><figcaption>Figura 19. ROI mediano por género.</figcaption></figure>
+<figure><img src='../images/18_rentabilidad_tramo.png'><figcaption>Figura 20. % de películas rentables por tramo de presupuesto.</figcaption></figure></div>
+<h3>5.5 Producción y talento</h3>
+<div class="two"><figure><img src='../images/21_top_directores.png'><figcaption>Figura 21. Directores con más títulos.</figcaption></figure>
+<figure><img src='../images/22_top_actores.png'><figcaption>Figura 22. Actores más frecuentes: dominan actores de voz de anime.</figcaption></figure></div>
+
+<h2 class="pb">6. Justificación de las representaciones gráficas</h2>
+<p>La forma de cada gráfico se eligió según <b>el tipo de dato</b>, <b>la pregunta</b> y <b>la audiencia</b>; el color se asignó
+al final y según su función (identidad, magnitud, polaridad o foco). Principios aplicados: jerarquía visual
+(título-hallazgo → gráfico → detalle en hover), atributos preatentivos (un color de foco sobre gris), proximidad y
+alineación (Gestalt), alta relación datos-tinta (grilla tenue, sin bordes ni 3D), un solo eje Y por gráfico y
+etiquetas directas selectivas.</p>
+<table><thead><tr><th>Visualización</th><th>Tipo de dato</th><th>Pregunta que responde</th><th>Por qué esta forma</th><th>Alternativa descartada</th></tr></thead><tbody><tr><td>KPIs (tarjetas)</td><td>Cuantitativo agregado</td><td>Lectura inmediata del estado del catálogo</td><td>Un número aislado no necesita ejes; el tamaño tipográfico da jerarquía</td><td>Velocímetros (gauge): más tinta, menos precisión</td></tr><tr><td>Treemap</td><td>Jerárquico parte-todo (tipo → género)</td><td>¿Qué géneros predominan?</td><td>El área muestra pesos relativos de 30+ categorías en un espacio compacto</td><td>Torta: ilegible con > 5 categorías</td></tr><tr><td>Barras divergentes (small multiples)</td><td>Diferencia con signo (pp)</td><td>Brecha oferta vs demanda por género</td><td>Se lee desde el 0; color de foco solo en oportunidades (atributo preatentivo)</td><td>Barras agrupadas oferta/demanda: obliga a restar mentalmente</td></tr><tr><td>Burbujas en cuadrantes</td><td>3 variables cuantitativas</td><td>Matriz de oportunidad popularidad × calificación × oferta</td><td>Los cuadrantes traducen el gráfico en decisiones (adquirir, nicho, revisar)</td><td>Tabla: no muestra relaciones ni agrupamientos</td></tr><tr><td>Small multiples de barras</td><td>2 métricas de escala distinta</td><td>Oferta vs popularidad por idioma</td><td>Evita el eje dual (anti-patrón) manteniendo la comparación por fila</td><td>Gráfico de doble eje Y</td></tr><tr><td>Mapa coroplético (log)</td><td>Geográfico + cantidad</td><td>¿Qué países producen más?</td><td>Patrón espacial; escala log para que EE.UU. no anule al resto; secuencial de un tono</td><td>Mapa de burbujas: superposición en Europa</td></tr><tr><td>Barras ordenadas con anotación</td><td>Ranking + % del catálogo</td><td>¿Qué países tienen contenido popular y poca oferta?</td><td>Se lee sin escala log: largo = popularidad, texto = oferta</td><td>Dispersión log oferta vs popularidad (versión anterior, difícil de explicar)</td></tr><tr><td>Dispersión (log)</td><td>2 cuantitativas, n grande</td><td>Relación popularidad–calificación; presupuesto–ingresos</td><td>Muestra forma, dispersión y outliers; log por asimetría; transparencia contra sobre-impresión</td><td>Líneas de tendencia solas: ocultan la dispersión</td></tr><tr><td>Áreas apiladas 100% (3 grupos)</td><td>Composición en el tiempo</td><td>¿Cuántos de cada 10 estrenos son Drama vs Animación/Familiar?</td><td>Volumen constante por la muestra; 3 grupos por género principal (cada título cuenta una vez)</td><td>Líneas de conteo (planas) y versión de 6 bandas (difícil de leer)</td></tr><tr><td>Líneas</td><td>Serie temporal continua</td><td>Tendencia de la calificación</td><td>La pendiente comunica dirección; 2025 marcado como incompleto</td><td>Barras por año: enfatizan valores, no tendencia</td></tr><tr><td>Mapa de calor</td><td>Matriz categoría × tiempo</td><td>Popularidad/calificación por género y año</td><td>12 géneros × 16 años sin 'espagueti' de líneas; escala secuencial</td><td>12 líneas superpuestas</td></tr><tr><td>Box plot (log) e histograma</td><td>Distribuciones</td><td>Diferencias películas vs series</td><td>Mediana, cuartiles y outliers en una forma compacta</td><td>Promedios en barras: ocultan la asimetría</td></tr><tr><td>Barras horizontales ordenadas</td><td>Ranking categórico</td><td>Top títulos, directores, actores, ROI por género</td><td>La longitud es el canal más preciso; etiquetas largas legibles en Y</td><td>Barras verticales con etiquetas rotadas</td></tr><tr><td>Dot plot</td><td>Comparación en rango estrecho (6–7,5)</td><td>Calificación por país</td><td>No obliga a empezar en 0, menos tinta que barras</td><td>Barras truncadas (engañosas)</td></tr></tbody></table>
+<h3>Color y accesibilidad</h3>
+<ul>
+ <li><b>Categórico:</b> película = azul <code>#2a78d6</code>, serie = naranjo <code>#eb6834</code>, en todos los gráficos (el color sigue a la entidad).
+ Paleta validada computacionalmente para protanopía, deuteranopía y tritanopía (separación ΔE ≥ 9).</li>
+ <li><b>Foco:</b> violeta <code>#6250d6</code> sobre gris <code>#d6d5ce</code> para dirigir la atención a la oportunidad.</li>
+ <li><b>Secuencial:</b> un solo tono (azul claro → oscuro) en mapa y mapa de calor; nunca arcoíris.</li>
+ <li><b>Legibilidad:</b> tipografía sans-serif del sistema, tamaño mínimo 10–11 px, números en formato chileno (12.345,6),
+ leyenda siempre presente con ≥ 2 series y etiquetas directas; la identidad nunca depende solo del color.</li>
+</ul>
+
+<h2>7. Narrativa visual (Data Storytelling)</h2>
+<p>La narrativa sigue los 4 pasos de la evaluación (qué ocurre → qué lo sustenta → qué limita → qué decidir), que también
+cubren las 4 preguntas del caso (¿qué ocurre?, ¿por qué?, ¿qué evidencia?, ¿qué decisiones?):</p>
+<table><thead><tr><th>Paso</th><th>Mensaje</th><th>Visualizaciones</th></tr></thead><tbody><tr><td>1. Qué ocurre (hallazgo principal)</td><td>Lo más ofertado no es lo más demandado: el catálogo se concentra en Drama (23% de las asignaciones de género) y en inglés (44%), mientras la popularidad apunta a Animación, Familiar, Telenovela y Latinoamérica.</td><td>Treemap, brecha oferta/demanda</td></tr><tr><td>2. Qué lo sustenta (datos y visualizaciones)</td><td>Drama -5,1 pp de brecha; Acción y aventura +6,0 pp; Telenovela +3,4 pp; Animación con popularidad relativa 65/100 y nota 6,95 y ROI 2,3x; español con popularidad relativa 58/100 y 5,1% de oferta. Popularidad y calidad casi no se relacionan (correlación 0,23), por eso se miran juntas.</td><td>Matriz de oportunidad, dispersión, mercados, ROI</td></tr><tr><td>3. Qué limita (sesgos, riesgos y alcance)</td><td>Popularidad TMDB ≠ consumo propio; muestra de 1.000 títulos/año; finanzas solo para 22% de las películas; sin clasificación etaria; sin datos de usuarios (no se analiza retención).</td><td>Gráfico de calidad de datos, sección 9</td></tr><tr><td>4. Qué decidir (recomendación e impacto)</td><td>Reasignar la adquisición hacia Animación/Familiar, Latinoamérica y Asia de calidad, con menos Drama y un portafolio de películas balanceado; seguir el impacto esperado con indicadores.</td><td>Recomendaciones (sección 10)</td></tr></tbody></table>
+<p>Recursos aplicados: títulos-hallazgo (el lector entiende la conclusión aunque solo lea los títulos), anotaciones
+sobre los casos ejemplares (Get Out, Avengers: Endgame), cuadrantes con nombre de decisión, y un mismo hilo
+—<i>oferta vs demanda</i>— que conecta géneros, idiomas y mercados. Para la exposición oral se usa el mismo orden en la
+presentación ejecutiva (10 minutos) y el dashboard como respaldo para preguntas.</p>
+
+<h2 class="pb">8. Diseño e implementación del dashboard interactivo</h2>
+<p><b>Tecnología:</b> Python + Streamlit + Plotly (código en <code>dashboard/app.py</code>, gráficos en <code>src/charts.py</code>).
+Se ejecuta con <code>streamlit run dashboard/app.py</code>.</p>
+<table><thead><tr><th>Vista (navegación por pestañas)</th><th>Contenido</th><th>Audiencia y propósito</th></tr></thead><tbody><tr><td>🏠 Resumen ejecutivo</td><td>10 KPIs, 4 hallazgos dinámicos, brecha de géneros, mapa</td><td>Directorio / Gerente: estado en 30 segundos</td></tr><tr><td>🎯 Oportunidades de adquisición</td><td>Matriz con clic → detalle del género; dispersión; tendencias; rankings intercambiables</td><td>Vista central del Gerente de Contenidos</td></tr><tr><td>📚 Composición del catálogo</td><td>Treemap, idiomas con foco seleccionable, áreas 100%, mapa de calor, estacionalidad</td><td>Caracterización del catálogo</td></tr><tr><td>🌎 Mercados</td><td>Mapa (volumen o popularidad), oferta vs demanda por país, calificación, tabla</td><td>Priorización de países</td></tr><tr><td>💰 Finanzas (películas)</td><td>KPIs financieros, presupuesto vs ingresos, ROI por género y tramo, joyas</td><td>Riesgo de inversión</td></tr><tr><td>🎬 Talento</td><td>Directores y actores más frecuentes por tipo</td><td>Negociación con estudios / talento</td></tr><tr><td>🧾 Datos y metodología</td><td>Calidad de datos, decisiones, descarga CSV</td><td>Transparencia y confianza</td></tr></tbody></table>
+<p>Cada página del dashboard abre con un encabezado de tres bloques —<b>Audiencia</b>, <b>Pregunta que responde</b> y
+<b>Decisión que habilita</b>— para que el usuario sepa para qué sirve antes de mirar los gráficos.</p>
+<p><b>Interacción:</b> 5 filtros globales en la barra lateral (tipo, año, género, idioma, país) que se propagan a todas
+las vistas y tablas; botón de restablecer; selección de burbuja con <i>drill-down</i>; controles segmentados para cambiar
+la métrica; tooltips con detalle en todos los gráficos; exportación PNG; descarga del alcance filtrado. Los títulos
+se recalculan con cada filtro y la línea "Alcance" indica siempre qué se está mirando.</p>
+<figure><img src='../images/dashboard_tab0.png'><figcaption>Figura 23. Vista Resumen ejecutivo: KPIs, hallazgos dinámicos, brecha y mapa.</figcaption></figure>
+<figure><img src='../images/dashboard_tab1_vista.png'><figcaption>Figura 24. Vista Oportunidades: matriz interactiva (clic en una burbuja para ver los títulos del género).</figcaption></figure>
+<div class="two"><figure><img src='../images/dashboard_tab4_vista.png'><figcaption>Figura 25. Vista Finanzas (películas).</figcaption></figure>
+<figure><img src='../images/dashboard_tab3_vista.png'><figcaption>Figura 26. Vista Mercados.</figcaption></figure></div>
+
+<h2 class="pb">9. Evaluación crítica de la solución</h2>
+<h3>9.1 Fortalezas</h3>
+<table><thead><tr><th>Fortaleza</th><th>Evidencia</th></tr></thead><tbody><tr><td>Foco en una audiencia y una pregunta</td><td>Todo el dashboard responde '¿qué adquirir?' para la Gerencia de Contenidos; los títulos son hallazgos, no descripciones.</td></tr><tr><td>Títulos dinámicos y siempre verdaderos</td><td>Cada título se calcula desde los datos filtrados: al cambiar un filtro, el mensaje se actualiza (no hay textos fijos que queden obsoletos).</td></tr><tr><td>Sistema visual consistente y accesible</td><td>Paleta validada para daltonismo (ΔE ≥ 9 en protanopía/deuteranopía), película = azul y serie = naranjo en los 24 gráficos, gris de contexto + un color de foco, sin ejes duales ni 3D.</td></tr><tr><td>Métricas robustas</td><td>Mediana, percentiles dentro de cada tipo, calificación con ≥ 10 votos y ponderación bayesiana; ROI mediano en vez de promedio.</td></tr><tr><td>Interacción con propósito</td><td>Filtros globales, selección de burbuja con detalle del género, rankings intercambiables, exportación PNG y descarga CSV del alcance filtrado.</td></tr><tr><td>Reproducibilidad</td><td>Pipeline en scripts (<code>src/</code>), notebooks ejecutados, imágenes e informe regenerables con un comando.</td></tr></tbody></table>
+<h3>9.2 Limitaciones, sesgos y riesgos (con mitigación)</h3>
+<table><thead><tr><th>Limitación / sesgo</th><th>Riesgo</th><th>Mitigación aplicada o propuesta</th></tr></thead><tbody><tr><td>Muestra estratificada (1.000 títulos/año/tipo)</td><td>No permite medir crecimiento real del catálogo ni comparar volúmenes entre años.</td><td>Se analiza composición y no volumen; se advierte en subtítulos. Solicitar extracto completo.</td></tr><tr><td><code>rating</code> duplica <code>vote_average</code>; <code>duration</code> vacía</td><td>No se pueden calcular los KPIs de clasificación etaria ni de duración que pide el caso.</td><td>Se documenta como brecha de datos; recomendación #6 a Data & Analytics.</td></tr><tr><td>Popularidad TMDB ≠ consumo en StreamView</td><td>Sesgo de fuente: mide interés global, no reproducciones de nuestros usuarios (regla 5).</td><td>Se usa como proxy relativo (percentiles) y no se afirma impacto en retención o engagement; integrar datos propios en una fase 2.</td></tr><tr><td>Sesgo de recencia</td><td>Los estrenos 2024–2025 tienen popularidad inflada y pocos votos (2025: ~8% con votos suficientes).</td><td>2025 marcado como incompleto; percentiles dentro del tipo; umbral de votos.</td></tr><tr><td>Sesgo de supervivencia financiera</td><td>Solo 3.500 películas (22%) tienen presupuesto e ingresos válidos; suelen ser las más exitosas o conocidas.</td><td>KPIs financieros etiquetados con su universo; ROI mediano; no extrapolar a todo el catálogo.</td></tr><tr><td>Faltantes en series</td><td>69% sin director y 11% sin país: los análisis de talento y mercado sub-representan series.</td><td>Indicado en las visualizaciones; análisis por tipo separados.</td></tr><tr><td>Taxonomía de géneros armonizada</td><td>Agrupar 'Action' y 'Adventure' pierde detalle fino.</td><td>Decisión documentada; se puede desagregar en el dashboard en una versión futura.</td></tr></tbody></table>
+<h3>9.3 Oportunidades de mejora priorizadas</h3>
+<p>Priorizadas por impacto en la decisión de adquisición y viabilidad (esfuerzo y dependencia de datos):</p>
+<table><thead><tr><th>Prioridad</th><th>Mejora</th><th>Fundamento técnico</th><th>Esfuerzo</th><th>Viabilidad / requisito</th></tr></thead><tbody><tr><td>1 · Alta</td><td>Integrar datos propios de reproducciones y suscripciones (cuando la empresa los entregue)</td><td>Reemplaza el proxy externo (popularidad TMDB) por consumo real y es el requisito para medir el impacto de las adquisiciones; hoy no están disponibles</td><td>Alto</td><td>Requiere acceso a fuentes corporativas de usuarios</td></tr><tr><td>2 · Alta</td><td>Corregir la fuente: clasificación etaria y duración reales</td><td>Habilita los KPIs de clasificación que pide el caso; hoy <code>rating</code> es una copia de <code>vote_average</code></td><td>Bajo</td><td>Viable: es un ajuste de extracción del equipo Data &amp; Analytics</td></tr><tr><td>3 · Media</td><td>Agregar el costo de licencia por título para calcular costo por punto de popularidad</td><td>El ROI de taquilla no es el retorno de StreamView; el costo de licencia sí lo es</td><td>Medio</td><td>Requiere datos del área de Adquisición</td></tr><tr><td>4 · Media</td><td>Vista 'lista de compra': títulos candidatos de géneros y mercados prioritarios que aún no están en el catálogo</td><td>Pasa del diagnóstico a una acción concreta con los mismos filtros del dashboard</td><td>Medio</td><td>Viable con los datos actuales + un listado externo de candidatos</td></tr><tr><td>5 · Baja</td><td>Modo oscuro validado y texturas para impresión y daltonismo severo</td><td>La paleta ya está validada; esto extiende la accesibilidad a otros contextos de uso</td><td>Bajo</td><td>Viable de inmediato</td></tr></tbody></table>
+<h3>9.4 Decisiones de diseño revisadas durante el desarrollo</h3>
+<ul>
+ <li><b>Simplificación para la audiencia:</b> dos gráficos eran difíciles de explicar. El mix de géneros pasó de 6 bandas por "asignaciones de género" a 3 grupos por género principal ("de cada 10 películas, 2 son Drama"), y mercados pasó de una dispersión logarítmica a un ranking de barras con el % del catálogo anotado. Además, "percentil" se reemplazó por <i>popularidad relativa (0–100; 50 = título típico)</i> y cada gráfico del dashboard tiene una línea "Cómo leer".</li>
+ <li>Se descartó un gráfico de "títulos por año" (línea plana por la muestra estratificada) y se reemplazó por áreas al 100%.</li>
+ <li>El histograma superpuesto mezclaba colores (azul + naranjo = marrón); se cambió a barras agrupadas.</li>
+ <li>Las etiquetas de la matriz de oportunidad se superponían; se implementó un algoritmo de ubicación con líneas guía.</li>
+ <li>Los títulos fijos podían quedar falsos al filtrar; se cambiaron por títulos calculados desde los datos.</li>
+</ul>
+
+<h2>10. Conclusiones y recomendaciones</h2>
+<p><b>Conclusiones.</b> (1) El catálogo está concentrado en lo que más abunda, no en lo que más se demanda.
+(2) Popularidad y calidad son dimensiones casi independientes, por lo que deben evaluarse juntas. (3) Animación y
+Familiar son los únicos géneros que combinan alta popularidad, alta calificación y retorno financiero sobre la mediana.
+(4) Latinoamérica —el mercado objetivo de StreamView— está sub-representada pese a su alta popularidad relativa.
+(5) La calidad de los datos limita algunos KPIs del caso y debe corregirse en la fuente.</p>
+<table><thead><tr><th>Recomendación</th><th>Evidencia del análisis (medida)</th><th>Impacto esperado (no medido aún)</th><th>Indicador de seguimiento</th></tr></thead><tbody><tr><td>Aumentar la adquisición de <b>Animación y Familiar</b> (películas y series)</td><td>Animación (películas): popularidad relativa 65/100 (típico = 50), calificación 6,95 y solo 4,3% de la oferta. ROI mediano 2,3x (73% rentables) y Familiar 2,2x (77%). El top 10 mejor evaluado está dominado por animación.</td><td>Más títulos en el cuadrante de oportunidad; mayor calificación media del catálogo.</td><td>% de Animación y Familiar en el catálogo; calificación media de los títulos incorporados</td></tr><tr><td>Crecer en <b>contenido latinoamericano</b> en español/portugués, con foco en <b>telenovelas y reality</b></td><td>Español: 5,1% del catálogo pero con popularidad relativa 58/100 (sobre el típico y sobre el inglés). Telenovela: +3,4 pp de brecha, popularidad relativa 85. México (popularidad relativa 66, 1,5% de las producciones), Chile (67) y Colombia (60).</td><td>Coherente con la visión de StreamView (líder en Latinoamérica): catálogo más relevante para el mercado propio.</td><td>% del catálogo en español/portugués; brecha de Telenovela (pp) y popularidad relativa de títulos LatAm incorporados</td></tr><tr><td><b>Reducir la adquisición incremental de Drama</b> y reasignar ese presupuesto</td><td>Drama es el género más ofertado pero está sub-representado entre los más populares (-5,1 pp en películas, -1,8 pp en series). ROI mediano 1,3x, solo 56% rentables.</td><td>Libera presupuesto para las recomendaciones 1 y 2 sin aumentar el gasto total.</td><td>% de Drama en las nuevas adquisiciones; brecha de Drama (pp)</td></tr><tr><td>Mantener un <b>pipeline asiático de calidad</b> (Japón y Corea del Sur)</td><td>Mejor calificación media entre los 15 mayores productores: Japón 7,22, Corea del Sur 7,10. Actores de voz de anime dominan el ranking de frecuencia.</td><td>Sostiene la calificación media del catálogo con los productores mejor evaluados.</td><td>Calificación media de títulos de Japón y Corea del Sur incorporados</td></tr><tr><td><b>Portafolio de películas balanceado</b>: blockbusters para estabilidad + apuestas de bajo presupuesto en terror/misterio</td><td>El 85% de las películas > USD 60 M recupera su inversión vs 59% de las < USD 5 M; pero las 'joyas' de bajo presupuesto logran ROI de 20x–95x (Get Out, Insidious, Lights Out).</td><td>Controla el riesgo (37% de películas no recupera la inversión) sin renunciar a alto retorno.</td><td>% de películas adquiridas con ROI ≥ 1 y ROI mediano del portafolio</td></tr><tr><td>Exigir a la fuente <b>clasificación etaria y duración</b> y sumar datos propios de consumo</td><td>Hoy no es posible calcular los KPIs de clasificación del caso; la popularidad es un proxy externo.</td><td>Habilita los KPIs de clasificación del caso y, cuando existan datos de usuarios, medir consumo real en vez de un proxy.</td><td>% de registros con clasificación etaria y duración válidas</td></tr></tbody></table>
+<div class="box"><b>Impacto esperado vs resultados medidos.</b> La columna "Evidencia" contiene resultados <b>ya medidos</b>
+en los datos del catálogo. La columna "Impacto esperado" es una <b>proyección</b>: todavía no ha ocurrido ni se ha medido.
+Para verificarla, el dashboard permite seguir los indicadores de la última columna en cada actualización del catálogo
+(línea base = valores de este informe). No se afirma impacto en retención, engagement ni ingresos por suscripción, porque
+no hay datos de usuarios disponibles.</div>
+<div class="box"><b>Impacto esperado de la solución:</b> la Gerencia de Contenidos pasa de reportes aislados a una
+herramienta única donde, en minutos, puede (a) ubicar un género o país candidato en la matriz de oportunidad, (b) verificar
+su calidad y riesgo financiero, y (c) bajar a la lista de títulos concretos. Esto responde a los problemas 1, 3, 4, 6 y 7
+del caso y permite medir el efecto de las recomendaciones en el tiempo con los mismos KPIs.</div>
+
+<h2>Anexo · Reproducibilidad</h2>
+<table><thead><tr><th>Comando</th><th>Resultado</th></tr></thead><tbody><tr><td><code>python src/prepare_data.py</code></td><td>Integra y limpia los datos → <code>data/processed/</code></td></tr><tr><td><code>python src/export_images.py</code></td><td>Regenera las 24 visualizaciones → <code>images/</code></td></tr><tr><td><code>python src/build_notebooks.py</code></td><td>Ejecuta los notebooks de calidad y EDA → <code>notebooks/</code></td></tr><tr><td><code>python src/build_report.py</code></td><td>Genera este informe → <code>reports/</code></td></tr><tr><td><code>streamlit run dashboard/app.py</code></td><td>Abre el dashboard interactivo</td></tr></tbody></table>
+</body></html>

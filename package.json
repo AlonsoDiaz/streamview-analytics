@@ -1,0 +1,7 @@
+{
+  "name": "streamview-analytics",
+  "private": true,
+  "description": "Generador de la presentación ejecutiva (pptxgenjs)",
+  "scripts": { "presentacion": "node src/build_presentation.js" },
+  "dependencies": { "pptxgenjs": "^4.0.0" }
+}

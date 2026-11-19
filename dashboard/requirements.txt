@@ -1,0 +1,6 @@
+# Dependencias mínimas para ejecutar el dashboard (Streamlit Community Cloud las instala desde aquí)
+pandas>=2.2
+numpy>=1.26
+plotly>=5.24
+streamlit>=1.40
+pycountry>=24.6
